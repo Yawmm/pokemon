@@ -1,6 +1,7 @@
 using Game.Battles.Events;
 using Game.Battles.Results;
 using Game.Battles.Rounds;
+using Game.Stats;
 using Game.Trainers;
 using Spectre.Console;
 
@@ -72,13 +73,24 @@ public record Battle
     public IBattleResult? Execute(ITurn player, ITurn opponent)
     {
         // Get the correct turn order.
-        var (first, second) = player.Priority > opponent.Priority
-            ? (player, opponent)
-            : player.Priority < opponent.Priority 
-                ? (opponent, player)
-                : Random.Shared.Next(0, 2) == 0
-                    ? (player, opponent)
-                    : (opponent, player);
+        var (playerSpeed, opponentSpeed) = (player.Team.Actor.Stats[Stat.Speed], opponent.Team.Actor.Stats[Stat.Speed]);
+        var (first, second) = 
+            // Priority check
+            player.Priority > opponent.Priority
+                ? (player, opponent)
+                : player.Priority < opponent.Priority 
+                    ? (opponent, player) :
+                    
+            // Speed check
+            playerSpeed > opponentSpeed 
+                ? (player, opponent)
+                : playerSpeed < opponentSpeed 
+                    ? (opponent, player) :
+                            
+            // Random check
+            Random.Shared.Next(0, 2) == 0
+                ? (player, opponent)
+                : (opponent, player);
 
         // Execute the turns
         var turnResult = ExecuteTurns(first, second);

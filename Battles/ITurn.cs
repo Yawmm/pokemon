@@ -11,7 +11,7 @@ public interface ITurn : IAction
     /// <summary>
     /// The priority of the <see cref="ITurn"/>
     /// </summary>
-    public double Priority { get; }
+    public int Priority { get; }
 
     /// <summary>
     /// The <see cref="Game.Trainers.Team"/> which executed the <see cref="ITurn"/>.

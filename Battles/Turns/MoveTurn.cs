@@ -34,9 +34,9 @@ public record MoveTurn : ITurn
     
     /// <inheritdoc cref="ITurn.Team"/>
     public required Team Team { get; init; }
-    
+
     /// <inheritdoc cref="ITurn.Priority"/>
-    public double Priority => Move.Priority ?? Math.Clamp(Team.Actor.Stats[Stat.Speed] / 1000, 0, 1);
+    public int Priority => Move.Priority ?? 0;
 
     /// <summary>
     /// Whether or not the <see cref="Move"/> is finished executing all its stages.

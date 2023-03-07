@@ -11,7 +11,7 @@ namespace Game.Battles.Turns;
 public record RetreatTurn : ITurn
 {
     /// <inheritdoc cref="ITurn.Priority"/>
-    public double Priority => double.MaxValue;
+    public int Priority => int.MaxValue;
 
     /// <inheritdoc cref="ITurn.Team"/>
     public required Team Team { get; set; }

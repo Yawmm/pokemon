@@ -125,9 +125,13 @@ public static class PokemonPrompts
             AnsiConsole.MarkupLine($"\n[{Colors.Move}]{move.Name}[/]");
             AnsiConsole.MarkupLine($"[white italic]{move.Description}[/]");
             AnsiConsole.MarkupLine($"\n[white]Type[/] - [silver]{move.Type}[/]");
-            AnsiConsole.MarkupLine($"[white]Power[/] - [silver]{(move.Power is null ? "/" : move.Power)}[/]");
-            AnsiConsole.MarkupLine($"[white]Accuracy[/] - [silver]{(move.Accuracy is null ? "/" : move.Accuracy)}[/]");
             AnsiConsole.MarkupLine($"[white]PP[/] - [silver]{move.PP}[/]");
+            if (move.Power is not null)
+                AnsiConsole.MarkupLine($"[white]Power[/] - [silver]{move.Power}[/]");
+            if (move.Accuracy is not null)
+                AnsiConsole.MarkupLine($"[white]Accuracy[/] - [silver]{move.Accuracy}[/]");
+            if (move.Priority is not null)
+                AnsiConsole.MarkupLine($"[white]Priority[/] - [silver]{move.Priority}[/]");
         }
     }
 

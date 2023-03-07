@@ -9,7 +9,7 @@ namespace Game.Battles.Turns;
 public class SwapTurn : ITurn
 {
     /// <inheritdoc cref="ITurn.Priority"/>
-    public double Priority => double.MaxValue;
+    public int Priority => int.MaxValue - 1;
 
     /// <inheritdoc cref="ITurn.Team"/>
     public required Team Team { get; init; }
