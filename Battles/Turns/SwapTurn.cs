@@ -1,7 +1,5 @@
 using Game.Battles.Events;
-using Game.Companions;
 using Game.Trainers;
-using Spectre.Console;
 
 namespace Game.Battles.Turns;
 

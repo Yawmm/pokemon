@@ -101,6 +101,30 @@ public static class OpponentList
     );
 
     #endregion
+
+    #region Mixed
+
+    public static Trainer Jeff() => new(
+        name: "Jeff",
+        decider: new RandomDecider(),
+        pokemon: new List<Pokemon>
+        {
+            PokemonList.Bulbasaur(level: 8),
+            PokemonList.Charmander(level: 15),
+            PokemonList.Squirtle(level: 1)
+        }
+    );
+    
+    public static Trainer Akari() => new(
+        name: "Akari",
+        decider: new RandomDecider(),
+        pokemon: new List<Pokemon>
+        {
+            PokemonList.Ivysaur(level: 23),
+            PokemonList.Charmeleon(level: 30),
+            PokemonList.Wartortle(level: 16)
+        }
+    );
     
     public static Trainer Oak() => new(
         name: "Gary Oak",
@@ -112,5 +136,7 @@ public static class OpponentList
             PokemonList.Blastoise(level: 100)
         }
     );
+
+    #endregion
     
 }

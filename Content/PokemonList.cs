@@ -1,5 +1,4 @@
 using Game.Companions;
-using Game.Natures;
 using Game.Stats;
 using Game.Types;
 

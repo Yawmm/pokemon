@@ -5,9 +5,7 @@ using Game.Battles.Rounds;
 using Game.Battles.Turns;
 using Game.Battles.Turns.Checks;
 using Game.Battles.Turns.Cleanups;
-using Game.Companions;
 using Game.Content;
-using Game.Moves;
 using Game.Moves.Checks;
 using Game.Trainers;
 using Spectre.Console;
@@ -55,6 +53,8 @@ public static class BattlePrompts
                     OpponentList.Grant(), 
                     OpponentList.Misty(), 
 
+                    OpponentList.Jeff(),
+                    OpponentList.Akari(),
                     OpponentList.Oak()
                 )
         );

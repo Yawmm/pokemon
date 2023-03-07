@@ -3,7 +3,6 @@ using Game.Companions;
 using Game.Moves;
 using Game.Stats;
 using Game.Trainers;
-using Newtonsoft.Json;
 using Spectre.Console;
 
 namespace Game.Battles.Turns;

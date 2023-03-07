@@ -51,6 +51,17 @@ public class PokemonMoveBuilder
     }
     
     /// <summary>
+    /// Add a priority value to the <see cref="PokemonMove"/>
+    /// </summary>
+    /// <param name="value">The new priority of the <see cref="PokemonMove"/>.</param>
+    /// <returns>The same <see cref="PokemonMoveBuilder"/> from which the <see cref="PokemonMove"/> can be built.</returns>
+    public PokemonMoveBuilder WithPriority(int value)
+    {
+        _instance.Priority = value;
+        return this;
+    }
+    
+    /// <summary>
     /// Add a <see cref="PokemonMoveStage"/> to the <see cref="PokemonMove"/>
     /// </summary>
     /// <param name="stage">The <see cref="PokemonMoveStage"/> that should be added to the <see cref="PokemonMove"/>.</param>
